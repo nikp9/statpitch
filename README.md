@@ -1,2 +1,2 @@
-# statpitch
+# StatPitch
 Beyond Averages. Into Impact.
