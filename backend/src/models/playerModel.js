@@ -2,9 +2,10 @@ import pool from '../config/db.js'
 
 const getPlayerStatsById = async (playerId) => {
   const query = `
-    SELECT *
-    FROM player_cricket_stats_by_competition
-    WHERE player_id = $1;
+    select * from mv_t20_batting_overall where player_id = $1 UNION ALL
+    select * from mv_t20_batting_international where player_id = $1 UNION ALL
+    select * from mv_t20_batting_leagues where player_id = $1 UNION ALL
+    select * from mv_t20_batting_others where player_id = $1
   `;
   const rows = await pool.query(query, [playerId]);
   return rows.rows;
