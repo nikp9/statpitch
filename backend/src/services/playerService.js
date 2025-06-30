@@ -1,8 +1,10 @@
-import getPlayerStatsById from '../models/playerModel.js';
+import {getPlayerBattingStatsById, getPlayerBowlingStatsById} from '../models/playerModel.js';
 
-const getPlayerStatService = async (playerId) => {
-  return await getPlayerStatsById(playerId);
+export const getPlayerBattingStatService = async (playerId) => {
+  return await getPlayerBattingStatsById(playerId);
 };
 
-export default getPlayerStatService;
+export const getPlayerBowlingStatService = async (playerId) => {
+  return await getPlayerBowlingStatsById(playerId);
+};
 

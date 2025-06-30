@@ -1,7 +1,8 @@
 import { Router } from 'express';
 const router = Router();
-import getPlayerStats from '../controllers/playerController.js';
+import {getPlayerBattingStats, getPlayerBowlingStats} from '../controllers/playerController.js';
 
-router.get('/:id/stats', getPlayerStats);
+router.get('/:id/batting', getPlayerBattingStats);
+router.get('/:id/bowling', getPlayerBowlingStats);
 
 export default router;
