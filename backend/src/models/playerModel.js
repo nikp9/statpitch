@@ -21,3 +21,13 @@ export const getPlayerBowlingStatsById = async (playerId) => {
   const rows = await pool.query(query, [playerId]);
   return rows.rows;
 };
+
+export const getPlayerTeamStat = async (country, gender) => {
+  const query = `
+  SELECT *
+  FROM team_head_to_head_by_team
+  WHERE searched_team = $1 and gender = $2 order by matches_played desc LIMIT 5
+  `;
+  const rows = await pool.query(query, [country, gender]);
+  return rows.rows;
+}

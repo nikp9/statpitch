@@ -1,17 +1,10 @@
-import {getPlayerBattingStatService, getPlayerBowlingStatService}  from '../services/playerService.js';
+import {getPlayerStatService}  from '../services/playerService.js';
 
-export async function getPlayerBattingStats(req, res) {
+export async function getPlayerStats(req, res) {
   try {
-    const stats = await getPlayerBattingStatService(req.params.id);
-    res.json(stats);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-}
-
-export async function getPlayerBowlingStats(req, res) {
-  try {
-    const stats = await getPlayerBowlingStatService(req.params.id);
+    const player_id = req.params.id;
+    const { country, gender } = req.query;
+    const stats = await getPlayerStatService(player_id, country, gender);
     res.json(stats);
   } catch (err) {
     res.status(500).json({ error: err.message });

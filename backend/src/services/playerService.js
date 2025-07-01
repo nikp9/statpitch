@@ -1,10 +1,15 @@
-import {getPlayerBattingStatsById, getPlayerBowlingStatsById} from '../models/playerModel.js';
+import {getPlayerBattingStatsById, getPlayerBowlingStatsById, getPlayerTeamStat} from '../models/playerModel.js';
 
-export const getPlayerBattingStatService = async (playerId) => {
-  return await getPlayerBattingStatsById(playerId);
+export const getPlayerStatService = async (player_id, country, gender) => {
+  const [batting, bowling, team_stat] = await Promise.all([
+    getPlayerBattingStatsById(player_id),
+    getPlayerBowlingStatsById(player_id),
+    getPlayerTeamStat(country, gender)
+  ])
+  const result = {
+    batting,
+    bowling,
+    team_stat
+  }
+  return result;
 };
-
-export const getPlayerBowlingStatService = async (playerId) => {
-  return await getPlayerBowlingStatsById(playerId);
-};
-
