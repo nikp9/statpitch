@@ -2,9 +2,12 @@ import express from 'express'
 import 'dotenv/config'
 import playerRoutes from './routes/playerRoutes.js';
 import searchRoute from './routes/searchRoute.js'
+import cors from 'cors'
 
 const app = express()
 const port = process.env.PORT
+
+app.use(cors())
 
 app.use('/api/player', playerRoutes);
 app.use('/api/searchList', searchRoute)
