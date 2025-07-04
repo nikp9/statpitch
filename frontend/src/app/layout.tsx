@@ -13,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-gray-100 text-gray-900">
+      <body className="bg-white-100 text-gray-900">
         <Navbar />
         <main className="max-w-7xl mx-auto px-4 py-6">{children}</main>
       </body>
