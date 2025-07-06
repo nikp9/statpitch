@@ -1,5 +1,13 @@
 import pool from '../config/db.js'
 
+export const getPlayerBasicInfo = async (playerId) => {
+  const query = `
+    select * from players where player_id = $1
+  `
+  const rows = await pool.query(query, [playerId]);
+  return rows.rows;
+}
+
 export const getPlayerBattingStatsById = async (playerId) => {
   const query = `
     select * from mv_t20_batting_overall where player_id = $1 UNION ALL
