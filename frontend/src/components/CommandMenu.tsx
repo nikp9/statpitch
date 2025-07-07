@@ -1,6 +1,5 @@
 'use client'
 
-
 import {
   CommandDialog,
   CommandEmpty,
@@ -12,6 +11,7 @@ import {
 import { useEffect, useState, useMemo } from "react"
 import api from '@/utils/axios'
 import Fuse from 'fuse.js'
+import { useRouter } from 'next/navigation'
 
 type CommandMenuProps = {
   open: boolean
@@ -22,10 +22,13 @@ type Player = {
   player_id: string
   player_name: string
   full_name: string
+  cricinfo_name: string | null
   role: string
+  img_url: string | null
 }
 
 export function CommandMenu({ open, setOpen }: CommandMenuProps) {
+  const router = useRouter()
   const [players, setPlayers] = useState<Player[]>([])
   const [query, setQuery] = useState("")
 
@@ -42,16 +45,18 @@ export function CommandMenu({ open, setOpen }: CommandMenuProps) {
     fetchPlayers()
   }, [])
 
-const fuse = useMemo(() => {
-  return new Fuse(players, {
-    keys: ['full_name'],
-    threshold: 0.9, // Increase from 0.3 to 0.6
-    ignoreLocation: true,
+  const fuse = useMemo(() => {
+    return new Fuse(players, {
+      keys: [
+        'player_name',
+        'full_name',
+        'cricinfo_name'
+      ],
+      threshold: 0.4,
+      ignoreLocation: true,
+    });
+  }, [players]);
 
-  });
-}, [players]);
-
-  // Perform fuzzy search (limit to top 20 results)
   const filteredPlayers = query.trim()
     ? fuse.search(query.trim()).map(result => result.item).slice(0, 20)
     : players.slice(0, 20)
@@ -69,14 +74,18 @@ const fuse = useMemo(() => {
           {filteredPlayers.map((player) => (
             <CommandItem
               key={player.player_id}
+              value={`${player.player_name} ${player.full_name}`}
               onSelect={() => {
                 setOpen(false)
-                // router.push(`/players/${player.player_id}`)
+                router.push(`/player/${player.player_id}`)
               }}
             >
               <div className="flex flex-col">
                 <span className="font-medium">{player.player_name}</span>
-                <span className="text-sm text-muted-foreground">{player.role}</span>
+                <span className="text-sm text-muted-foreground">{player.full_name}</span>
+                {player.role && player.role !== 'NA' && (
+                  <span className="text-xs text-gray-500">{player.role}</span>
+                )}
               </div>
             </CommandItem>
           ))}
