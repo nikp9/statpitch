@@ -14,25 +14,41 @@ type Player = {
   img_url: string
 }
 
-export default async function PlayerPage({ params }: { params: { id: string } }) {
+type PlayerStatsResponse = {
+  player_info: Player[]
+  batting: any[]
+  bowling: any[]
+  team_stat: any[]
+}
+
+export default async function PlayerPage({ 
+  params, 
+  searchParams 
+}: { 
+  params: Promise<{ id: string }>;
+  searchParams: Promise<{ country?: string; gender?: string }>;
+}) {
   try {
-    const res = await api.get<{ player_info: Player[] }>(`/api/player/${params.id}`)
-    const player = res.data.player_info?.[0]
+    const { id: player_id } = await params
+    const { country, gender } = await searchParams
+    
+    const res = await api.get<PlayerStatsResponse>(`/api/player/${player_id}?country=${country}&gender=${gender}`)
+    const { player_info, batting, bowling, team_stat } = res.data
+
+    if (!player_info?.length) return notFound()
+
+    const player = player_info[0]
+
     return (
-      <>
-        {/* <PlayerInfoCard
-    //       name={player.player_name}
-    //       fullName={player.full_name}
-    //       cricinfo_name={player.cricinfo_name}
-    //       role={player.role}
-    //       country={player.country}
-    //       imageUrl={player.img_url}
-    //     /> */}
-        <PlayerDashboard/>
-      </>
+      <PlayerDashboard
+        player={player}
+        batting={batting}
+        bowling={bowling}
+        teamStat={team_stat}
+      />
     )
   } catch (err) {
     console.error('Player fetch error:', err)
-    notFound() // Show 404 page
+    return notFound()
   }
 }

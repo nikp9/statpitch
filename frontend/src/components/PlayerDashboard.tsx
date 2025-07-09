@@ -9,230 +9,41 @@ import { Progress } from "@/components/ui/progress"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Target, Zap, Trophy, Users } from "lucide-react"
 
-// Mock data based on your API structure
-const mockPlayerData = {
-  "player_info": [
-    {
-      "player_id": "be150fc8",
-      "cricinfo_id": "275487",
-      "cricinfo_name": "Ellyse Perry",
-      "player_name": "EA Perry",
-      "full_name": "Ellyse Alexandra Perry",
-      "role": "Allrounder",
-      "gender": "female",
-      "country": "Australia",
-      "img_url": "https://img1.hscicdn.com/image/upload/f_auto,t_h_100_2x/lsci/db/PICTURES/CMS/320100/320130.1.png"
-    }
-  ],
-  "batting": [
-    {
-      "player_id": "be150fc8",
-      "player_name": "EA Perry",
-      "gender": "female",
-      "powerplay_balls": "983",
-      "powerplay_runs": "1090",
-      "powerplay_strike_rate": "110.89",
-      "dot_ball_avoidance_pct": "63.9631043256997455",
-      "innings_considered": "10",
-      "innings_25_plus": "8",
-      "consistency_25_plus_pct": "80.00",
-      "fours": "465",
-      "sixes": "86",
-      "total_batting_runs": "3984",
-      "boundary_runs": "2376",
-      "boundary_dependency_pct": "59.64",
-      "total_matches_played": "129"
-    },
-    {
-      "player_id": "be150fc8",
-      "player_name": "EA Perry",
-      "gender": "female",
-      "powerplay_balls": "124",
-      "powerplay_runs": "140",
-      "powerplay_strike_rate": "112.90",
-      "dot_ball_avoidance_pct": "69.6453900709219858",
-      "innings_considered": "10",
-      "innings_25_plus": "5",
-      "consistency_25_plus_pct": "50.00",
-      "fours": "97",
-      "sixes": "24",
-      "total_batting_runs": "955",
-      "boundary_runs": "532",
-      "boundary_dependency_pct": "55.71",
-      "total_matches_played": "39"
-    },
-    {
-      "player_id": "be150fc8",
-      "player_name": "EA Perry",
-      "gender": "female",
-      "powerplay_balls": "834",
-      "powerplay_runs": "928",
-      "powerplay_strike_rate": "111.27",
-      "dot_ball_avoidance_pct": "62.5517812758906379",
-      "innings_considered": "10",
-      "innings_25_plus": "8",
-      "consistency_25_plus_pct": "80.00",
-      "fours": "364",
-      "sixes": "62",
-      "total_batting_runs": "3007",
-      "boundary_runs": "1828",
-      "boundary_dependency_pct": "60.79",
-      "total_matches_played": "88"
-    }
-  ],
-  "bowling": [
-    {
-      "player_id": "be150fc8",
-      "player_name": "EA Perry",
-      "gender": "female",
-      "balls_bowled": "1267",
-      "fours_conceded": "199",
-      "sixes_conceded": "30",
-      "boundary_concession_rate": "18.0741910023677979",
-      "dot_ball_percentage": "44.36",
-      "total_balls": "1267",
-      "pp_balls": "553",
-      "pp_pct": "43.65",
-      "pp_econ": "6.69",
-      "pp_wkts": "27",
-      "mid_balls": "560",
-      "mid_pct": "44.20",
-      "mid_econ": "7.11",
-      "mid_wkts": "28",
-      "death_balls": "146",
-      "death_pct": "11.52",
-      "death_econ": "10.03",
-      "death_wkts": "14",
-      "matches_bowled": "93",
-      "total_wickets": "66"
-    },
-    {
-      "player_id": "be150fc8",
-      "player_name": "EA Perry",
-      "gender": "female",
-      "balls_bowled": null,
-      "fours_conceded": null,
-      "sixes_conceded": null,
-      "boundary_concession_rate": null,
-      "dot_ball_percentage": null,
-      "total_balls": "188",
-      "pp_balls": "110",
-      "pp_pct": "58.51",
-      "pp_econ": "4.75",
-      "pp_wkts": "7",
-      "mid_balls": "72",
-      "mid_pct": "38.30",
-      "mid_econ": "6.00",
-      "mid_wkts": "4",
-      "death_balls": "6",
-      "death_pct": "3.19",
-      "death_econ": "6.00",
-      "death_wkts": "1",
-      "matches_bowled": "21",
-      "total_wickets": "12"
-    },
-    {
-      "player_id": "be150fc8",
-      "player_name": "EA Perry",
-      "gender": "female",
-      "balls_bowled": "1031",
-      "fours_conceded": "170",
-      "sixes_conceded": "26",
-      "boundary_concession_rate": "19.0106692531522793",
-      "dot_ball_percentage": "42.29",
-      "total_balls": "1031",
-      "pp_balls": "419",
-      "pp_pct": "40.64",
-      "pp_econ": "7.17",
-      "pp_wkts": "20",
-      "mid_balls": "470",
-      "mid_pct": "45.59",
-      "mid_econ": "7.34",
-      "mid_wkts": "22",
-      "death_balls": "134",
-      "death_pct": "13.00",
-      "death_econ": "10.12",
-      "death_wkts": "13",
-      "matches_bowled": "70",
-      "total_wickets": "52"
-    }
-  ],
-  "team_stat": [
-    {
-      "searched_team": "India",
-      "opponent": "South Africa",
-      "gender": "male",
-      "matches_played": "15",
-      "wins": "9",
-      "win_percentage": "60.00"
-    },
-    {
-      "searched_team": "India",
-      "opponent": "England",
-      "gender": "male",
-      "matches_played": "15",
-      "wins": "10",
-      "win_percentage": "66.67"
-    },
-    {
-      "searched_team": "India",
-      "opponent": "Sri Lanka",
-      "gender": "male",
-      "matches_played": "13",
-      "wins": "9",
-      "win_percentage": "69.23"
-    },
-    {
-      "searched_team": "India",
-      "opponent": "West Indies",
-      "gender": "male",
-      "matches_played": "13",
-      "wins": "9",
-      "win_percentage": "69.23"
-    },
-    {
-      "searched_team": "India",
-      "opponent": "Australia",
-      "gender": "male",
-      "matches_played": "9",
-      "wins": "7",
-      "win_percentage": "77.78"
-    }
-  ]
+type Props = {
+  player: any
+  batting: any[]
+  bowling: any[]
+  teamStat: any[]
 }
 
-interface PlayerDashboardProps {
-  playerData?: typeof mockPlayerData
-}
-
-export default function PlayerDashboard({ playerData = mockPlayerData }: PlayerDashboardProps) {
-  const player = playerData.player_info[0]
+export default function PlayerDashboard({ player, batting, bowling, teamStat }: Props) {
+  
   const [selectedBattingCategory, setSelectedBattingCategory] = useState("Overall")
   const [selectedBowlingCategory, setSelectedBowlingCategory] = useState("Overall")
 
   // Assign category names manually based on index, fallback-safe
-  const battingCategories = playerData.batting.map((_, i) => {
-    if (playerData.batting.length === 1) return "Overall"
+  const battingCategories = batting.map((_, i) => {
+    if (batting.length === 1) return "Overall"
     if (i === 0) return "Overall"
     if (i === 1) return "International"
-    if (i === 2) return "League"
-    return `Other ${i - 2}`
+    if (i === 2) return "Top Leagues"
+    return `Other`
   })
 
-  const battingStats = playerData.batting.map((entry, i) => ({
+  const battingStats = batting.map((entry, i) => ({
     ...entry,
     category: battingCategories[i],
   }))
 
-  const bowlingCategories = playerData.bowling.map((_, i) => {
-    if (playerData.bowling.length === 1) return "Overall"
+  const bowlingCategories = bowling.map((_, i) => {
+    if (bowling.length === 1) return "Overall"
     if (i === 0) return "Overall"
     if (i === 1) return "International"
-    if (i === 2) return "League"
-    return `Other ${i - 2}`
+    if (i === 2) return "Top Leagues"
+    return `Other`
   })
 
-  const bowlingStats = playerData.bowling.map((entry, i) => ({
+  const bowlingStats = bowling.map((entry, i) => ({
     ...entry,
     category: bowlingCategories[i],
   }))
@@ -243,18 +54,20 @@ export default function PlayerDashboard({ playerData = mockPlayerData }: PlayerD
 
 
   const getRoleColor = (role: string) => {
-    switch (role.toLowerCase()) {
-      case "batsman":
-      case "batter":
-        return "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300"
-      case "bowler":
-        return "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300"
-      case "allrounder":
-        return "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300"
-      case "wicket-keeper":
-        return "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300"
-      default:
-        return "bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-300"
+    if (role){
+      switch (role.toLowerCase()) {
+        case "batsman":
+        case "batter":
+          return "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300"
+        case "bowler":
+          return "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300"
+        case "allrounder":
+          return "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300"
+        case "wicket-keeper":
+          return "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300"
+        default:
+          return "bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-300"
+      }
     }
   }
 
@@ -268,15 +81,17 @@ export default function PlayerDashboard({ playerData = mockPlayerData }: PlayerD
               <AvatarImage src={player.img_url || "/placeholder.svg"} alt={player.full_name} />
               <AvatarFallback className="text-lg sm:text-xl lg:text-2xl">
                 {player.full_name
-                  .split(" ")
-                  .map((n) => n[0])
-                  .join("")}
+                ? player.full_name
+                    .split(" ")
+                    .map((n: string) => n[0])
+                    .join("")
+                : "P"}
               </AvatarFallback>
             </Avatar>
             <div className="flex-1 space-y-2 text-center sm:text-left">
               <div className="flex flex-col sm:flex-row sm:items-center gap-2">
                 <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold">{player.full_name}</h1>
-                <Badge className={getRoleColor(player.role)}>{player.role}</Badge>
+                {player.role != 'NA' ? (<Badge className={getRoleColor(player.role)}>{player.role}</Badge>) : <></>}
               </div>
               <p className="text-base sm:text-lg text-muted-foreground">{player.player_name}</p>
               <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-sm text-muted-foreground">
@@ -284,7 +99,7 @@ export default function PlayerDashboard({ playerData = mockPlayerData }: PlayerD
                   <Users className="w-4 h-4" />
                   {player.country}
                 </span>
-                <span>ID: {player.cricinfo_id}</span>
+                {/* <span>ID: {player.cricinfo_id}</span> */}
               </div>
             </div>
           </div>
@@ -625,7 +440,7 @@ export default function PlayerDashboard({ playerData = mockPlayerData }: PlayerD
                     </TableRow>
                   </TableHeader>
                   <TableBody>
-                    {playerData.team_stat.map((stat, index) => (
+                    {teamStat.map((stat, index) => (
                       <TableRow key={index}>
                         <TableCell className="font-medium text-xs sm:text-sm">{stat.opponent}</TableCell>
                         <TableCell className="text-center text-xs sm:text-sm">{stat.matches_played}</TableCell>

@@ -24,6 +24,8 @@ type Player = {
   full_name: string
   cricinfo_name: string | null
   role: string
+  country: string
+  gender: string
   img_url: string | null
 }
 
@@ -77,7 +79,7 @@ export function CommandMenu({ open, setOpen }: CommandMenuProps) {
               value={`${player.player_name} ${player.full_name}`}
               onSelect={() => {
                 setOpen(false)
-                router.push(`/player/${player.player_id}`)
+                router.push(`/player/${player.player_id}?country=${player.country}&gender=${player.gender}`)
               }}
             >
               <div className="flex flex-col">
