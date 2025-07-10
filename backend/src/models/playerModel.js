@@ -10,9 +10,9 @@ export const getPlayerBasicInfo = async (playerId) => {
 
 export const getPlayerBattingStatsById = async (playerId) => {
   const query = `
-    select *, 'overall' as source from mv_t20_batting_overall where player_id = $1 UNION ALL
-    select *, 'international' as source from mv_t20_batting_international where player_id = $1 UNION ALL
-    select *, 'leagues' as source from mv_t20_batting_leagues where player_id = $1
+    select *, 'Overall' as source from mv_t20_batting_overall where player_id = $1 UNION ALL
+    select *, 'International' as source from mv_t20_batting_international where player_id = $1 UNION ALL
+    select *, 'Top Leagues' as source from mv_t20_batting_leagues where player_id = $1
     `;
     // select * from mv_t20_batting_others where player_id = $1
   const rows = await pool.query(query, [playerId]);
@@ -21,9 +21,9 @@ export const getPlayerBattingStatsById = async (playerId) => {
 
 export const getPlayerBowlingStatsById = async (playerId) => {
   const query = `
-    select *, 'overall' as source from mv_t20_bowling_overall where player_id = $1 UNION ALL
-    select *, 'international' as source from mv_t20_bowling_international where player_id = $1 UNION ALL
-    select *, 'leagues' as source from mv_t20_bowling_leagues where player_id = $1
+    select *, 'Overall' as source from mv_t20_bowling_overall where player_id = $1 UNION ALL
+    select *, 'International' as source from mv_t20_bowling_international where player_id = $1 UNION ALL
+    select *, 'Top Leagues' as source from mv_t20_bowling_leagues where player_id = $1
     `;
     // select * from mv_t20_bowling_others where player_id = $1
   const rows = await pool.query(query, [playerId]);
