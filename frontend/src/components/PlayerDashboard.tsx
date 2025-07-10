@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useMemo } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -21,36 +21,51 @@ export default function PlayerDashboard({ player, batting, bowling, teamStat }: 
   const [selectedBattingCategory, setSelectedBattingCategory] = useState("Overall")
   const [selectedBowlingCategory, setSelectedBowlingCategory] = useState("Overall")
 
-  // Assign category names manually based on index, fallback-safe
-  const battingCategories = batting.map((_, i) => {
-    if (batting.length === 1) return "Overall"
-    if (i === 0) return "Overall"
-    if (i === 1) return "International"
-    if (i === 2) return "Top Leagues"
-    return `Other`
-  })
-
   const battingStats = batting.map((entry, i) => ({
     ...entry,
-    category: battingCategories[i],
+    category: entry.source,
   }))
-
-  const bowlingCategories = bowling.map((_, i) => {
-    if (bowling.length === 1) return "Overall"
-    if (i === 0) return "Overall"
-    if (i === 1) return "International"
-    if (i === 2) return "Top Leagues"
-    return `Other`
-  })
 
   const bowlingStats = bowling.map((entry, i) => ({
     ...entry,
-    category: bowlingCategories[i],
+    category: entry.source,
   }))
 
   // Selected entries
   const selectedBattingStats = battingStats.find((b) => b.category === selectedBattingCategory)
   const selectedBowlingStats = bowlingStats.find((b) => b.category === selectedBowlingCategory)
+
+  const bestBowlingPhase = useMemo(() => {
+    if (!selectedBowlingStats) return "None";
+
+    const phases = [
+      {
+        name: "Powerplay",
+        pct: parseFloat(selectedBowlingStats.pp_pct),
+        econ: parseFloat(selectedBowlingStats.pp_econ),
+      },
+      {
+        name: "Middle",
+        pct: parseFloat(selectedBowlingStats.mid_pct),
+        econ: parseFloat(selectedBowlingStats.mid_econ),
+      },
+      {
+        name: "Death",
+        pct: parseFloat(selectedBowlingStats.death_pct),
+        econ: parseFloat(selectedBowlingStats.death_econ),
+      },
+    ];
+
+    const validPhases = phases.filter(p => !isNaN(p.pct) && !isNaN(p.econ));
+
+    if (validPhases.length === 0) return "None";
+
+    const mostBowledPhase = validPhases.reduce((max, curr) =>
+      curr.pct > max.pct ? curr : max
+    );
+
+    return mostBowledPhase.econ <= 8 ? mostBowledPhase.name : "None";
+  }, [selectedBowlingStats]);
 
 
   const getRoleColor = (role: string) => {
@@ -70,6 +85,8 @@ export default function PlayerDashboard({ player, batting, bowling, teamStat }: 
       }
     }
   }
+
+  const battingConsistencyPCT = selectedBattingStats ? Number.parseFloat(selectedBattingStats.consistency_25_plus_pct) : 0;
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-6 space-y-6">
@@ -107,18 +124,24 @@ export default function PlayerDashboard({ player, batting, bowling, teamStat }: 
       </Card>
 
       {/* Statistics Tabs */}
-      <Tabs defaultValue="batting" className="w-full">
+      <Tabs defaultValue={(player.role).includes("Bowl") ? "bowling": "batting"} className="w-full">
         <TabsList className="grid w-full grid-cols-3 h-auto">
+          {(batting.length > 0 && Number.parseInt(selectedBattingStats.total_batting_runs) >= 100) ?
           <TabsTrigger value="batting" className="flex items-center hover:cursor-pointer gap-1 sm:gap-2 text-xs sm:text-sm p-2 sm:p-3">
             <Target className="w-3 h-3 sm:w-4 sm:h-4" />
             <span className="hidden xs:inline">Batting</span>
             <span className="xs:hidden">Bat</span>
           </TabsTrigger>
+          : <></>
+          }
+          {bowling.length > 0 ?
           <TabsTrigger value="bowling" className="flex items-center hover:cursor-pointer gap-1 sm:gap-2 text-xs sm:text-sm p-2 sm:p-3">
             <Zap className="w-3 h-3 sm:w-4 sm:h-4" />
             <span className="hidden xs:inline">Bowling</span>
             <span className="xs:hidden">Bowl</span>
           </TabsTrigger>
+          : <></>
+          }
           <TabsTrigger value="team" className="flex items-center hover:cursor-pointer gap-1 sm:gap-2 text-xs sm:text-sm p-2 sm:p-3">
             <Trophy className="w-3 h-3 sm:w-4 sm:h-4" />
             <span className="hidden xs:inline">Team Stats</span>
@@ -169,10 +192,11 @@ export default function PlayerDashboard({ player, batting, bowling, teamStat }: 
               </Card>
 
               {/* Strike Rate Card */}
+              {selectedBattingStats.powerplay_strike_rate ? 
               <Card className="h-full">
                 <CardHeader className="pb-2">
                   <div className="flex items-center justify-between">
-                    <CardTitle className="text-sm font-medium text-muted-foreground">Strike Rate</CardTitle>
+                    <CardTitle className="text-sm font-medium text-muted-foreground">Powerplay Strike Rate</CardTitle>
                     <Badge
                       variant={
                         Number.parseFloat(selectedBattingStats.powerplay_strike_rate) > 120 ? "default" : "secondary"
@@ -191,7 +215,8 @@ export default function PlayerDashboard({ player, batting, bowling, teamStat }: 
                     </p>
                   </div>
                 </CardContent>
-              </Card>
+              </Card> : <></>
+              }
 
               {/* Boundaries Card */}
               <Card className="h-full">
@@ -222,11 +247,18 @@ export default function PlayerDashboard({ player, batting, bowling, teamStat }: 
                     <CardTitle className="text-sm font-medium text-muted-foreground">Consistency</CardTitle>
                     <Badge
                       variant={
-                        Number.parseFloat(selectedBattingStats.consistency_25_plus_pct) > 70 ? "default" : "secondary"
+                        battingConsistencyPCT >= 70 ? "outline" : battingConsistencyPCT >= 30 ? "secondary": "destructive"
                       }
                       className="text-xs"
                     >
-                      {Number.parseFloat(selectedBattingStats.consistency_25_plus_pct) > 70 ? "High" : "Moderate"}
+                      {battingConsistencyPCT >= 80 ?
+                      <img
+                        src="/flame.gif"
+                        alt="fire"
+                        className="w-4 h-4 inline-block"
+                      /> : <></>
+                      }
+                      {battingConsistencyPCT >= 70 ? "High" : battingConsistencyPCT >= 30 ? "Average": "Poor"}
                     </Badge>
                   </div>
                 </CardHeader>
@@ -318,10 +350,17 @@ export default function PlayerDashboard({ player, batting, bowling, teamStat }: 
                   <div className="flex items-center justify-between">
                     <CardTitle className="text-sm font-medium text-muted-foreground">Powerplay Economy</CardTitle>
                     <Badge
-                      variant={Number.parseFloat(selectedBowlingStats.pp_econ) < 7 ? "default" : "secondary"}
+                      variant={Number.parseFloat(selectedBowlingStats.pp_econ) <= 8 ? "outline" : Number.parseFloat(selectedBowlingStats.pp_econ) <= 10 ? "secondary": "destructive"}
                       className="text-xs"
                     >
-                      {Number.parseFloat(selectedBowlingStats.pp_econ) < 7 ? "Excellent" : "Good"}
+                      {bestBowlingPhase == "Powerplay" ?
+                        <img
+                          src="/flame.gif"
+                          alt="fire"
+                          className="w-4 h-4 inline-block"
+                        /> : <></>
+                      }
+                      {bestBowlingPhase == "Powerplay"? "Best" : Number.parseFloat(selectedBowlingStats.pp_econ) <= 8 ? "Good" : Number.parseFloat(selectedBowlingStats.pp_econ) <= 10 ? "Average": "Poor"}
                     </Badge>
                   </div>
                 </CardHeader>
@@ -340,15 +379,25 @@ export default function PlayerDashboard({ player, batting, bowling, teamStat }: 
                 <CardHeader className="pb-2">
                   <div className="flex items-center justify-between">
                     <CardTitle className="text-sm font-medium text-muted-foreground">Middle Economy</CardTitle>
-                    <Badge variant="outline" className="text-xs">
-                      {selectedBowlingStats.mid_pct}% balls
+                    <Badge
+                      variant={Number.parseFloat(selectedBowlingStats.mid_econ) <= 8 ? "outline" : Number.parseFloat(selectedBowlingStats.mid_econ) <= 10 ? "secondary": "destructive"}
+                      className="text-xs"
+                    >
+                      {bestBowlingPhase == "Middle" ?
+                        <img
+                          src="/flame.gif"
+                          alt="fire"
+                          className="w-4 h-4 inline-block"
+                        /> : <></>
+                      }
+                      {bestBowlingPhase == "Middle"? "Best" : Number.parseFloat(selectedBowlingStats.mid_econ) <= 8 ? "Good" : Number.parseFloat(selectedBowlingStats.mid_econ) <= 10 ? "Average": "Poor"}
                     </Badge>
                   </div>
                 </CardHeader>
                 <CardContent className="pt-0">
                   <div className="space-y-1">
                     <p className="text-3xl font-bold">{selectedBowlingStats.mid_econ}</p>
-                    <p className="text-sm text-muted-foreground">{selectedBowlingStats.mid_wkts} wickets</p>
+                    <p className="text-sm text-muted-foreground">{selectedBowlingStats.mid_wkts} wickets • {selectedBowlingStats.mid_pct}% balls</p>
                   </div>
                 </CardContent>
               </Card>
@@ -359,10 +408,17 @@ export default function PlayerDashboard({ player, batting, bowling, teamStat }: 
                   <div className="flex items-center justify-between">
                     <CardTitle className="text-sm font-medium text-muted-foreground">Death Economy</CardTitle>
                     <Badge
-                      variant={Number.parseFloat(selectedBowlingStats.death_econ) < 10 ? "default" : "destructive"}
+                      variant={Number.parseFloat(selectedBowlingStats.death_econ) <= 8 ? "outline" : Number.parseFloat(selectedBowlingStats.death_econ) <= 10 ? "secondary": "destructive"}
                       className="text-xs"
                     >
-                      {Number.parseFloat(selectedBowlingStats.death_econ) < 10 ? "Good" : "Needs Work"}
+                      {bestBowlingPhase == "Death" ?
+                        <img
+                          src="/flame.gif"
+                          alt="fire"
+                          className="w-4 h-4 inline-block"
+                        /> : <></>
+                      }
+                      {bestBowlingPhase == "Death"? "Best" : Number.parseFloat(selectedBowlingStats.death_econ) <= 8 ? "Good" : Number.parseFloat(selectedBowlingStats.death_econ) <= 10 ? "Average": "Poor"}
                     </Badge>
                   </div>
                 </CardHeader>
