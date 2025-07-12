@@ -67,7 +67,6 @@ export default function PlayerDashboard({ player, batting, bowling, teamStat }: 
     return mostBowledPhase.econ <= 8 ? mostBowledPhase.name : "None";
   }, [selectedBowlingStats]);
 
-
   const getRoleColor = (role: string) => {
     if (role){
       switch (role.toLowerCase()) {
@@ -124,7 +123,7 @@ export default function PlayerDashboard({ player, batting, bowling, teamStat }: 
       </Card>
 
       {/* Statistics Tabs */}
-      <Tabs defaultValue={(player.role).includes("Bowl") ? "bowling": "batting"} className="w-full">
+      <Tabs defaultValue={(!player.role || player.role == 'Allrounder') ? (batting.length > 0 ? "batting" : "bowling") : player.role.includes("Bowl") ? "bowling" : "batting"} className="w-full">
         <TabsList className="grid w-full grid-cols-3 h-auto">
           {(batting.length > 0 && Number.parseInt(selectedBattingStats.total_batting_runs) >= 100) ?
           <TabsTrigger value="batting" className="flex items-center hover:cursor-pointer gap-1 sm:gap-2 text-xs sm:text-sm p-2 sm:p-3">
@@ -164,7 +163,7 @@ export default function PlayerDashboard({ player, batting, bowling, teamStat }: 
             ))}
           </div>
 
-          {selectedBattingStats && (
+          {selectedBattingStats && !isNaN(Number.parseInt(selectedBattingStats.total_batting_runs)) && (
             <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {/* Total Runs Card */}
               <Card className="h-full">
@@ -192,7 +191,7 @@ export default function PlayerDashboard({ player, batting, bowling, teamStat }: 
               </Card>
 
               {/* Strike Rate Card */}
-              {selectedBattingStats.powerplay_strike_rate ? 
+              {selectedBattingStats.powerplay_strike_rate && (
               <Card className="h-full">
                 <CardHeader className="pb-2">
                   <div className="flex items-center justify-between">
@@ -215,8 +214,8 @@ export default function PlayerDashboard({ player, batting, bowling, teamStat }: 
                     </p>
                   </div>
                 </CardContent>
-              </Card> : <></>
-              }
+              </Card>
+              )}
 
               {/* Boundaries Card */}
               <Card className="h-full">
@@ -241,36 +240,38 @@ export default function PlayerDashboard({ player, batting, bowling, teamStat }: 
               </Card>
 
               {/* Consistency Card */}
-              <Card className="h-full">
-                <CardHeader className="pb-2">
-                  <div className="flex items-center justify-between">
-                    <CardTitle className="text-sm font-medium text-muted-foreground">Consistency</CardTitle>
-                    <Badge
-                      variant={
-                        battingConsistencyPCT >= 70 ? "outline" : battingConsistencyPCT >= 30 ? "secondary": "destructive"
-                      }
-                      className="text-xs"
-                    >
-                      {battingConsistencyPCT >= 80 ?
-                      <img
-                        src="/flame.gif"
-                        alt="fire"
-                        className="w-4 h-4 inline-block"
-                      /> : <></>
-                      }
-                      {battingConsistencyPCT >= 70 ? "High" : battingConsistencyPCT >= 30 ? "Average": "Poor"}
-                    </Badge>
-                  </div>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <div className="space-y-1">
-                    <p className="text-3xl font-bold">{selectedBattingStats.consistency_25_plus_pct}%</p>
-                    <p className="text-sm text-muted-foreground">
-                      {selectedBattingStats.innings_25_plus}/{selectedBattingStats.innings_considered} innings 25+
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
+              {!isNaN(battingConsistencyPCT) && (
+                <Card className="h-full">
+                  <CardHeader className="pb-2">
+                    <div className="flex items-center justify-between">
+                      <CardTitle className="text-sm font-medium text-muted-foreground">Consistency</CardTitle>
+                      <Badge
+                        variant={
+                          battingConsistencyPCT >= 70 ? "outline" : battingConsistencyPCT >= 30 ? "secondary": "destructive"
+                        }
+                        className="text-xs"
+                      >
+                        {battingConsistencyPCT >= 80 ?
+                        <img
+                          src="/flame.gif"
+                          alt="fire"
+                          className="w-4 h-4 inline-block"
+                        /> : <></>
+                        }
+                        {battingConsistencyPCT >= 70 ? "High" : battingConsistencyPCT >= 30 ? "Average": "Poor"}
+                      </Badge>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="pt-0">
+                    <div className="space-y-1">
+                      <p className="text-3xl font-bold">{selectedBattingStats.consistency_25_plus_pct}%</p>
+                      <p className="text-sm text-muted-foreground">
+                        {selectedBattingStats.innings_25_plus}/{selectedBattingStats.innings_considered} innings 25+
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+              )}
 
               {/* Dot Ball Avoidance Card */}
               <Card className="h-full">
