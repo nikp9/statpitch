@@ -7,7 +7,19 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Progress } from "@/components/ui/progress"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Target, Zap, Trophy, Users } from "lucide-react"
+import { Target, Zap, Trophy, Users, Info } from "lucide-react"
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 
 type Props = {
   player: any
@@ -92,30 +104,41 @@ export default function PlayerDashboard({ player, batting, bowling, teamStat }: 
       {/* Player Header */}
       <Card className="w-full">
         <CardHeader className="p-4 sm:p-6">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
-            <Avatar className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 mx-auto sm:mx-0">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-start items-center justify-center gap-4 sm:gap-6 w-full text-center sm:text-left">
+            <Avatar className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24">
               <AvatarImage src={player.img_url || "/placeholder.svg"} alt={player.full_name} />
               <AvatarFallback className="text-lg sm:text-xl lg:text-2xl">
-                {player.full_name
-                ? player.full_name
-                    .split(" ")
-                    .map((n: string) => n[0])
-                    .join("")
-                : "P"}
+                {player.full_name 
+                  ? player.full_name.split(" ").map((n: string) => n[0]).join("")
+                  : "P"}
               </AvatarFallback>
             </Avatar>
-            <div className="flex-1 space-y-2 text-center sm:text-left">
-              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-                <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold">{player.full_name}</h1>
-                {player.role != 'NA' ? (<Badge className={getRoleColor(player.role)}>{player.role}</Badge>) : <></>}
+
+            <div className="flex-1 space-y-2">
+              <div className="flex flex-col sm:flex-row sm:items-center items-center justify-left gap-2">
+                <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold">
+                  {player.cricinfo_name ? player.cricinfo_name : player.player_name}
+                </h1>
+                {player.role !== 'NA' && (
+                  <Badge className={getRoleColor(player.role)}>{player.role}</Badge>
+                )}
               </div>
-              <p className="text-base sm:text-lg text-muted-foreground">{player.player_name}</p>
-              <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-sm text-muted-foreground">
+              <p className="text-base sm:text-lg text-muted-foreground">{player.full_name}</p>
+              <div className="flex flex-row sm:flex-row items-center justify-center sm:justify-start gap-3 sm:gap-5 text-sm text-muted-foreground">
                 <span className="flex items-center gap-1">
                   <Users className="w-4 h-4" />
                   {player.country}
                 </span>
-                {/* <span>ID: {player.cricinfo_id}</span> */}
+                <Select>
+                  <SelectTrigger className="w-auto font-bold">
+                    <SelectValue placeholder="T20" defaultValue={"T20"} />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="T20">T20</SelectItem>
+                    <SelectItem disabled value="ODI">ODI</SelectItem>
+                    <SelectItem disabled value="TEST">TEST (Coming Soon)</SelectItem>
+                  </SelectContent>
+              </Select>
               </div>
             </div>
           </div>
@@ -123,7 +146,7 @@ export default function PlayerDashboard({ player, batting, bowling, teamStat }: 
       </Card>
 
       {/* Statistics Tabs */}
-      <Tabs defaultValue={(!player.role || player.role == 'Allrounder' || player.role == 'NA') ? (batting.length > 0 ? "batting" : "bowling") : player.role.includes("Bowl") ? "bowling" : "batting"} className="w-full">
+      <Tabs defaultValue={(!player.role || player.role == 'Allrounder' || player.role == 'NA') ? (batting.length > 0 && Number.parseInt(selectedBattingStats.total_batting_runs) >= 100 ? "batting" : "bowling") : player.role.includes("Bowl") ? "bowling" : "batting"} className="w-full">
         <TabsList className="grid w-full grid-cols-3 h-auto">
           {(batting.length > 0 && Number.parseInt(selectedBattingStats.total_batting_runs) >= 100) ?
           <TabsTrigger value="batting" className="flex items-center hover:cursor-pointer gap-1 sm:gap-2 text-xs sm:text-sm p-2 sm:p-3">
@@ -179,7 +202,7 @@ export default function PlayerDashboard({ player, batting, bowling, teamStat }: 
                   <div className="space-y-1">
                     <p className="text-3xl font-bold">{selectedBattingStats.total_batting_runs}</p>
                     <p className="text-sm text-muted-foreground">
-                      Avg:{" "}
+                      Avg Score:{" "}
                       {(
                         Number.parseInt(selectedBattingStats.total_batting_runs) /
                         Number.parseInt(selectedBattingStats.total_matches_played)
@@ -244,7 +267,21 @@ export default function PlayerDashboard({ player, batting, bowling, teamStat }: 
                 <Card className="h-full">
                   <CardHeader className="pb-2">
                     <div className="flex items-center justify-between">
-                      <CardTitle className="text-sm font-medium text-muted-foreground">Consistency</CardTitle>
+                      <CardTitle className="text-sm font-medium text-muted-foreground flex items-center gap-1">
+                        Consistency
+                        <HoverCard>
+                          <HoverCardTrigger asChild>
+                            
+                            <button
+                              className="p-1 rounded-full hover:bg-muted transition-colors"
+                              aria-label="Info"
+                            >
+                              <Info className="h-3 w-3 text-muted-foreground" />
+                            </button>
+                          </HoverCardTrigger>
+                          <HoverCardContent>{`Includes only recent innings with 10+ balls faced. Short not-out innings are excluded.`}</HoverCardContent>
+                        </HoverCard>
+                      </CardTitle>
                       <Badge
                         variant={
                           battingConsistencyPCT >= 70 ? "outline" : battingConsistencyPCT >= 30 ? "secondary": "destructive"
@@ -452,7 +489,21 @@ export default function PlayerDashboard({ player, batting, bowling, teamStat }: 
               {selectedBowlingStats.boundary_concession_rate && (
                 <Card className="h-full">
                   <CardHeader className="pb-2">
-                    <CardTitle className="text-sm font-medium text-muted-foreground">Boundary Concession</CardTitle>
+                    <CardTitle className="text-sm font-medium text-muted-foreground flex items-center gap-1">
+                        Boundary Concession
+                        <HoverCard>
+                          <HoverCardTrigger asChild>
+                            
+                            <button
+                              className="p-1 rounded-full hover:bg-muted transition-colors"
+                              aria-label="Info"
+                            >
+                              <Info className="h-3 w-3 text-muted-foreground" />
+                            </button>
+                          </HoverCardTrigger>
+                          <HoverCardContent>{`Percentage of deliveries that went for boundaries (4s or 6s).`}</HoverCardContent>
+                        </HoverCard>
+                    </CardTitle>
                   </CardHeader>
                   <CardContent className="pt-0">
                     <div className="space-y-2">
