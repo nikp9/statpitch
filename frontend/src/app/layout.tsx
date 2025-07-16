@@ -1,6 +1,7 @@
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import Head from 'next/head';
 import { GeistSans } from 'geist/font/sans'
 
 export const metadata = {
@@ -15,6 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={GeistSans.className}>
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <body className="bg-white-100 text-gray-900">
         <div className="flex flex-col min-h-screen">
           <Navbar />
