@@ -22,13 +22,9 @@ export default function RootLayout({
       <body className="bg-white-100 text-gray-900">
         <div className="flex flex-col min-h-screen">
           <Navbar />
-
-          {/* Ensure main grows to fill space */}
           <main className="flex-1">
             {children}
           </main>
-
-          {/* Footer sticks to bottom if content is short */}
           <Footer />
         </div>
       </body>

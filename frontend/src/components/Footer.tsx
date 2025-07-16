@@ -13,7 +13,7 @@ export default function Footer() {
         </Link>
 
         <Link
-          href="https://github.com/nikp9/statpitch" // 🔁 replace with your GitHub repo link
+          href="https://github.com/nikp9/statpitch"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center space-x-2 text-gray-700 hover:text-black hover:bg-gray-100 rounded-md px-4 py-2 transition-colors transform active:scale-95 duration-200"

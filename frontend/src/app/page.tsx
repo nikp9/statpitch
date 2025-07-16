@@ -121,7 +121,6 @@ export default function HomePage() {
       <section className="mb-12">
         <h2 className="text-2xl font-semibold mb-4">Top Searches</h2>
         <div className="grid grid-cols-2  sm:grid-cols-3 md:grid-cols-4 gap-6">
-          {/* Example static player cards */}
           {players.map((player, idx) => (
             <Link
                 key={idx}
@@ -140,9 +139,6 @@ export default function HomePage() {
             ))}
         </div>
       </section>
-
-      {/* Optional: Stat Highlights or Match Insights */}
-      {/* You can render stat cards or charts here later */}
     </main>
   )
 }
