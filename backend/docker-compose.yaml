@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   statpitch-api:
-    build: .
+    image: ghcr.io/nikp9/statpitch-api:latest
     container_name: statpitch-api
     restart: unless-stopped
     env_file:
