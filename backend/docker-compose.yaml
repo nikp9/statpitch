@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
   statpitch-api:
     image: ghcr.io/nikp9/statpitch-api:latest
