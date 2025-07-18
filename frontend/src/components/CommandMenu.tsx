@@ -64,7 +64,7 @@ export function CommandMenu({ open, setOpen }: CommandMenuProps) {
     : players.slice(0, 20)
 
   return (
-    <CommandDialog open={open} onOpenChange={setOpen}>
+    <CommandDialog open={open} onOpenChange={setOpen} className="top-4 translate-y-0 max-w-2xl">
       <CommandInput
         placeholder="Type a player name..."
         value={query}
