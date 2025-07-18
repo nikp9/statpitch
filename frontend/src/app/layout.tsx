@@ -3,6 +3,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Head from 'next/head';
 import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { GeistSans } from 'geist/font/sans'
 
 export const metadata = {
@@ -26,6 +27,7 @@ export default function RootLayout({
           <main className="flex-1">
             {children}
             <Analytics />
+            <SpeedInsights />
           </main>
           <Footer />
         </div>
