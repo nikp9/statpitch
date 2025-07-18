@@ -16,8 +16,11 @@ type Player = {
 
 type PlayerStatsResponse = {
   player_info: Player[]
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   batting: any[]
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   bowling: any[]
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   team_stat: any[]
 }
 

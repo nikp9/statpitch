@@ -22,9 +22,13 @@ import {
 } from "@/components/ui/select"
 
 type Props = {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   player: any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   batting: any[]
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   bowling: any[]
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   teamStat: any[]
 }
 
@@ -33,12 +37,12 @@ export default function PlayerDashboard({ player, batting, bowling, teamStat }: 
   const [selectedBattingCategory, setSelectedBattingCategory] = useState("Overall")
   const [selectedBowlingCategory, setSelectedBowlingCategory] = useState("Overall")
 
-  const battingStats = batting.map((entry, i) => ({
+  const battingStats = batting.map((entry) => ({
     ...entry,
     category: entry.source,
   }))
 
-  const bowlingStats = bowling.map((entry, i) => ({
+  const bowlingStats = bowling.map((entry) => ({
     ...entry,
     category: entry.source,
   }))
