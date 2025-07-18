@@ -25,4 +25,4 @@ jobs:
       - name: Deploy to Vercel (Production)
         working-directory: frontend
         run: |
-          vercel --prod --token=${{ secrets.VERCEL_TOKEN }} --confirm --scope ${{ secrets.VERCEL_ORG_ID }} --project ${{ secrets.VERCEL_PROJECT_ID }}
+          vercel --prod --token=${{ secrets.VERCEL_TOKEN }} --confirm --project ${{ secrets.VERCEL_PROJECT_ID }}
