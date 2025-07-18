@@ -2,6 +2,7 @@ import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Head from 'next/head';
+import { Analytics } from "@vercel/analytics/next"
 import { GeistSans } from 'geist/font/sans'
 
 export const metadata = {
@@ -24,6 +25,7 @@ export default function RootLayout({
           <Navbar />
           <main className="flex-1">
             {children}
+            <Analytics />
           </main>
           <Footer />
         </div>
