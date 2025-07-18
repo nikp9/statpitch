@@ -3,16 +3,15 @@ import 'dotenv/config'
 import playerRoutes from './routes/playerRoutes.js';
 import searchRoute from './routes/searchRoute.js'
 import cors from 'cors'
+import compression from 'compression'
 
 const app = express()
 const port = process.env.PORT
 
-const cors = require('cors');
-
 const allowedOrigins = [
   'https://statpitch.com', 
   'https://www.statpitch.com',
-  'http://localhost:3000',
+  'http://localhost:3001',
 ];
 
 app.use(cors({
@@ -26,6 +25,7 @@ app.use(cors({
   credentials: true
 }));
 
+app.use(compression());
 
 app.use('/api/player', playerRoutes);
 app.use('/api/searchList', searchRoute)
