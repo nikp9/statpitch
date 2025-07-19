@@ -7,9 +7,43 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import { GeistSans } from 'geist/font/sans'
 
 export const metadata = {
-  title: 'StatPitch',
-  description: 'Advanced Cricket Analytics',
-}
+  title: 'StatPitch | Advanced Cricket Analytics',
+  description:
+    'StatPitch goes beyond averages to offer deep, contextual cricket insights. Explore boundary concession rates, matchup data, and player consistency like never before.',
+  keywords: [
+    'Cricket Analytics',
+    'Cricket Stats',
+    'IPL Data',
+    'Cricket Performance',
+    'Advanced Cricket Metrics',
+    'StatPitch',
+    'Nikhil Parihar'
+  ],
+  metadataBase: new URL('https://www.statpitch.com'),
+  authors: [
+    {
+      name: 'Nikhil Parihar',
+      url: 'https://github.com/nikp9'
+    }
+  ],
+  openGraph: {
+    title: 'Beyond Averages. Into Impact.',
+    description:
+      'Modern cricket analytics platform that delivers recent player performance insights with clarity and precision.',
+    url: 'https://www.statpitch.com',
+    siteName: 'StatPitch',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 628,
+        alt: 'StatPitch Logo',
+      },
+    ],
+    locale: 'en_IN',
+    type: 'website',
+  },
+};
 
 export default function RootLayout({
   children,
