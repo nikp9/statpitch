@@ -26,7 +26,7 @@ app.use(cors({
 }));
 
 app.use(compression());
-
+app.get("/api/health", (req, res) => res.send("ok"));
 app.use('/api/player', playerRoutes);
 app.use('/api/searchList', searchRoute)
 
