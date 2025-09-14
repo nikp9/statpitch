@@ -1,6 +1,7 @@
 package main
 
 import (
+	"crypto/tls"
 	"log"
 	"net/http"
 	"net/http/httputil"
@@ -26,7 +27,7 @@ func pickNext() *url.URL {
 }
 
 func main() {
-	log.Println("Starting Go Load Balancer on :8080")
+	log.Println("Starting Go Load Balancer with TLS on :443")
 
 	handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		target := pickNext()
@@ -37,5 +38,16 @@ func main() {
 		proxy.ServeHTTP(w, r)
 	})
 
-	log.Fatal(http.ListenAndServe(":80", handler))
+	server := &http.Server{
+		Addr:    ":443",
+		Handler: handler,
+		TLSConfig: &tls.Config{
+			MinVersion: tls.VersionTLS12,
+		},
+	}
+
+	certFile := "/etc/letsencrypt/live/api.statpitch.com/fullchain.pem"
+	keyFile := "/etc/letsencrypt/live/api.statpitch.com/privkey.pem"
+
+	log.Fatal(server.ListenAndServeTLS(certFile, keyFile))
 }
