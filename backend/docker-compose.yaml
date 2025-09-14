@@ -1,7 +1,6 @@
 services:
   statpitch-api:
     image: ghcr.io/nikp9/statpitch-api:latest
-    container_name: statpitch-api
     restart: unless-stopped
     env_file:
       - .env
