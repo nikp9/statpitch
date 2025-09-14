@@ -49,6 +49,9 @@ jobs:
           script: |
             echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
             cd /home/ubuntu/statpitch/backend
+            git reset --hard
+            git checkout main
+            git pull origin main
             docker compose pull
-            docker compose up -d --force-recreate --no-deps
+            docker compose up -d --force-recreate --no-deps --scale statpitch-api=3
             docker image prune -f
