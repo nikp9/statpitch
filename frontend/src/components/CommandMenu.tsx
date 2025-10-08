@@ -34,18 +34,18 @@ export function CommandMenu({ open, setOpen }: CommandMenuProps) {
   const [players, setPlayers] = useState<Player[]>([])
   const [query, setQuery] = useState("")
 
-  useEffect(() => {
-    const fetchPlayers = async () => {
-      try {
-        const res = await api.get('/api/searchList')
-        setPlayers(res.data)
-      } catch (err) {
-        console.error('Failed to fetch players:', err)
-      }
-    }
+  // useEffect(() => {
+  //   const fetchPlayers = async () => {
+  //     try {
+  //       const res = await api.get('/api/searchList')
+  //       setPlayers(res.data)
+  //     } catch (err) {
+  //       console.error('Failed to fetch players:', err)
+  //     }
+  //   }
 
-    fetchPlayers()
-  }, [])
+  //   fetchPlayers()
+  // }, [])
 
   const fuse = useMemo(() => {
     return new Fuse(players, {
