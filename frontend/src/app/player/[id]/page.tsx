@@ -28,15 +28,15 @@ type PlayerStatsResponse = {
 const data: Record<string, PlayerStatsResponse> = dummyData;
 
 export default async function PlayerPage({ 
-  params, 
-  searchParams 
+  params
+  // searchParams 
 }: { 
   params: Promise<{ id: string }>;
-  searchParams: Promise<{ country?: string; gender?: string }>;
+  // searchParams: Promise<{ country?: string; gender?: string }>;
 }) {
   try {
     const { id: player_id } = await params
-    const { country, gender } = await searchParams
+    // const { country, gender } = await searchParams
     
     // const res = await api.get<PlayerStatsResponse>(`/api/player/${player_id}?country=${country}&gender=${gender}`)
     const res = data[player_id]

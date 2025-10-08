@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import CommandSearch from '@/components/CommandSearch'
 import HamburgerMenu from '@/components/HamburgerMenu'
-
+/* eslint-disable @next/next/no-img-element */
 export default function Navbar() {
   return (
     <header className="w-full bg-white shadow-sm">

@@ -8,8 +8,8 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command"
-import { useEffect, useState, useMemo } from "react"
-import api from '@/utils/axios'
+import { useState, useMemo } from "react"
+// import api from '@/utils/axios'
 import Fuse from 'fuse.js'
 import { useRouter } from 'next/navigation'
 
@@ -31,7 +31,7 @@ type Player = {
 
 export function CommandMenu({ open, setOpen }: CommandMenuProps) {
   const router = useRouter()
-  const [players, setPlayers] = useState<Player[]>([])
+  const [players] = useState<Player[]>([])
   const [query, setQuery] = useState("")
 
   // useEffect(() => {
