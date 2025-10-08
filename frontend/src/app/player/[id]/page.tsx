@@ -1,6 +1,7 @@
 import PlayerDashboard from '@/components/PlayerDashboard'
-import api from '@/utils/axios'
+// import api from '@/utils/axios'
 import { notFound } from 'next/navigation'
+import dummyData from '@/utils/dummy_data.json'
 
 type Player = {
   player_id: string
@@ -24,6 +25,8 @@ type PlayerStatsResponse = {
   team_stat: any[]
 }
 
+const data: Record<string, PlayerStatsResponse> = dummyData;
+
 export default async function PlayerPage({ 
   params, 
   searchParams 
@@ -35,9 +38,10 @@ export default async function PlayerPage({
     const { id: player_id } = await params
     const { country, gender } = await searchParams
     
-    const res = await api.get<PlayerStatsResponse>(`/api/player/${player_id}?country=${country}&gender=${gender}`)
-    const { player_info, batting, bowling, team_stat } = res.data
-
+    // const res = await api.get<PlayerStatsResponse>(`/api/player/${player_id}?country=${country}&gender=${gender}`)
+    const res = data[player_id]
+    // const { player_info, batting, bowling, team_stat } = res.data
+    const { player_info, batting, bowling, team_stat } = res
     if (!player_info?.length) return notFound()
 
     const player = player_info[0]

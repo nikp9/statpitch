@@ -1,0 +1,1170 @@
+{
+    "ba607b88": {
+        "player_info": [
+            {
+            "player_id": "ba607b88",
+            "cricinfo_id": "253802",
+            "cricinfo_name": "Virat Kohli",
+            "player_name": "V Kohli",
+            "full_name": "Virat Kohli",
+            "role": "Top order Batter",
+            "gender": "male",
+            "country": "India",
+            "img_url": "https://img1.hscicdn.com/image/upload/f_auto,t_h_100_2x/lsci/db/PICTURES/CMS/316600/316605.3.png"
+            }
+        ],
+        "batting": [
+            {
+            "player_id": "ba607b88",
+            "player_name": "V Kohli",
+            "gender": "male",
+            "powerplay_balls": "1238",
+            "powerplay_runs": "1679",
+            "powerplay_strike_rate": "135.62",
+            "dot_ball_avoidance_pct": "69.53",
+            "innings_considered": "10",
+            "innings_25_plus": "8",
+            "consistency_25_plus_pct": "80.00",
+            "fours": "355",
+            "sixes": "126",
+            "total_batting_runs": "3868",
+            "boundary_runs": "2176",
+            "boundary_dependency_pct": "56.26",
+            "total_matches_played": "109",
+            "source": "Overall"
+            },
+            {
+            "player_id": "ba607b88",
+            "player_name": "V Kohli",
+            "gender": "male",
+            "powerplay_balls": "264",
+            "powerplay_runs": "287",
+            "powerplay_strike_rate": "108.71",
+            "dot_ball_avoidance_pct": "69.37",
+            "innings_considered": "10",
+            "innings_25_plus": "5",
+            "consistency_25_plus_pct": "50.00",
+            "fours": "87",
+            "sixes": "36",
+            "total_batting_runs": "1085",
+            "boundary_runs": "564",
+            "boundary_dependency_pct": "51.98",
+            "total_matches_played": "34",
+            "source": "International"
+            },
+            {
+            "player_id": "ba607b88",
+            "player_name": "V Kohli",
+            "gender": "male",
+            "powerplay_balls": "974",
+            "powerplay_runs": "1392",
+            "powerplay_strike_rate": "142.92",
+            "dot_ball_avoidance_pct": "69.60",
+            "innings_considered": "10",
+            "innings_25_plus": "8",
+            "consistency_25_plus_pct": "80.00",
+            "fours": "268",
+            "sixes": "90",
+            "total_batting_runs": "2783",
+            "boundary_runs": "1612",
+            "boundary_dependency_pct": "57.92",
+            "total_matches_played": "75",
+            "source": "Top Leagues"
+            }
+        ],
+        "bowling": [],
+        "team_stat": [
+            {
+            "searched_team": "India",
+            "opponent": "South Africa",
+            "gender": "male",
+            "matches_played": "15",
+            "wins": "9",
+            "win_percentage": "60.00"
+            },
+            {
+            "searched_team": "India",
+            "opponent": "England",
+            "gender": "male",
+            "matches_played": "15",
+            "wins": "10",
+            "win_percentage": "66.67"
+            },
+            {
+            "searched_team": "India",
+            "opponent": "Sri Lanka",
+            "gender": "male",
+            "matches_played": "13",
+            "wins": "9",
+            "win_percentage": "69.23"
+            },
+            {
+            "searched_team": "India",
+            "opponent": "West Indies",
+            "gender": "male",
+            "matches_played": "13",
+            "wins": "9",
+            "win_percentage": "69.23"
+            },
+            {
+            "searched_team": "India",
+            "opponent": "Australia",
+            "gender": "male",
+            "matches_played": "9",
+            "wins": "7",
+            "win_percentage": "77.78"
+            }
+        ]
+    },
+    "ded9240e": {
+        "player_info": [
+            {
+            "player_id": "ded9240e",
+            "cricinfo_id": "489889",
+            "cricinfo_name": "Pat Cummins",
+            "player_name": "PJ Cummins",
+            "full_name": "Patrick James Cummins",
+            "role": "Bowler",
+            "gender": "male",
+            "country": "Australia",
+            "img_url": "https://img1.hscicdn.com/image/upload/f_auto,t_h_100_2x/lsci/db/PICTURES/CMS/390900/390954.5.png"
+            }
+        ],
+        "batting": [
+            {
+            "player_id": "ded9240e",
+            "player_name": "PJ Cummins",
+            "gender": "male",
+            "powerplay_balls": null,
+            "powerplay_runs": null,
+            "powerplay_strike_rate": null,
+            "dot_ball_avoidance_pct": "65.01",
+            "innings_considered": "10",
+            "innings_25_plus": "0",
+            "consistency_25_plus_pct": "0.00",
+            "fours": "34",
+            "sixes": "37",
+            "total_batting_runs": "529",
+            "boundary_runs": "358",
+            "boundary_dependency_pct": "67.67",
+            "total_matches_played": "46",
+            "source": "Overall"
+            },
+            {
+            "player_id": "ded9240e",
+            "player_name": "PJ Cummins",
+            "gender": "male",
+            "powerplay_balls": null,
+            "powerplay_runs": null,
+            "powerplay_strike_rate": null,
+            "dot_ball_avoidance_pct": null,
+            "innings_considered": null,
+            "innings_25_plus": null,
+            "consistency_25_plus_pct": null,
+            "fours": "8",
+            "sixes": "5",
+            "total_batting_runs": "107",
+            "boundary_runs": "62",
+            "boundary_dependency_pct": "57.94",
+            "total_matches_played": "12",
+            "source": "International"
+            },
+            {
+            "player_id": "ded9240e",
+            "player_name": "PJ Cummins",
+            "gender": "male",
+            "powerplay_balls": null,
+            "powerplay_runs": null,
+            "powerplay_strike_rate": null,
+            "dot_ball_avoidance_pct": "65.02",
+            "innings_considered": "10",
+            "innings_25_plus": "1",
+            "consistency_25_plus_pct": "10.00",
+            "fours": "26",
+            "sixes": "32",
+            "total_batting_runs": "422",
+            "boundary_runs": "296",
+            "boundary_dependency_pct": "70.14",
+            "total_matches_played": "34",
+            "source": "Top Leagues"
+            }
+        ],
+        "bowling": [
+            {
+            "player_id": "ded9240e",
+            "player_name": "PJ Cummins",
+            "gender": "male",
+            "balls_bowled": "1632",
+            "fours_conceded": "222",
+            "sixes_conceded": "101",
+            "boundary_concession_rate": "19.79",
+            "dot_ball_percentage": "36.40",
+            "total_balls": "1632",
+            "pp_balls": "622",
+            "pp_pct": "38.11",
+            "pp_econ": "8.71",
+            "pp_wkts": "26",
+            "mid_balls": "597",
+            "mid_pct": "36.58",
+            "mid_econ": "7.73",
+            "mid_wkts": "33",
+            "death_balls": "405",
+            "death_pct": "24.82",
+            "death_econ": "10.21",
+            "death_wkts": "24",
+            "matches_bowled": "73",
+            "total_wickets": "80",
+            "source": "Overall"
+            },
+            {
+            "player_id": "ded9240e",
+            "player_name": "PJ Cummins",
+            "gender": "male",
+            "balls_bowled": "549",
+            "fours_conceded": "69",
+            "sixes_conceded": "24",
+            "boundary_concession_rate": "16.94",
+            "dot_ball_percentage": "40.44",
+            "total_balls": "549",
+            "pp_balls": "216",
+            "pp_pct": "39.34",
+            "pp_econ": "7.86",
+            "pp_wkts": "10",
+            "mid_balls": "183",
+            "mid_pct": "33.33",
+            "mid_econ": "7.05",
+            "mid_wkts": "8",
+            "death_balls": "144",
+            "death_pct": "26.23",
+            "death_econ": "9.08",
+            "death_wkts": "10",
+            "matches_bowled": "25",
+            "total_wickets": "26",
+            "source": "International"
+            },
+            {
+            "player_id": "ded9240e",
+            "player_name": "PJ Cummins",
+            "gender": "male",
+            "balls_bowled": "1083",
+            "fours_conceded": "153",
+            "sixes_conceded": "77",
+            "boundary_concession_rate": "21.24",
+            "dot_ball_percentage": "34.35",
+            "total_balls": "1083",
+            "pp_balls": "406",
+            "pp_pct": "37.49",
+            "pp_econ": "9.16",
+            "pp_wkts": "16",
+            "mid_balls": "414",
+            "mid_pct": "38.23",
+            "mid_econ": "8.03",
+            "mid_wkts": "25",
+            "death_balls": "261",
+            "death_pct": "24.10",
+            "death_econ": "10.83",
+            "death_wkts": "14",
+            "matches_bowled": "48",
+            "total_wickets": "54",
+            "source": "Top Leagues"
+            }
+        ],
+        "team_stat": [
+            {
+            "searched_team": "Australia",
+            "opponent": "West Indies",
+            "gender": "male",
+            "matches_played": "11",
+            "wins": "6",
+            "win_percentage": "54.55"
+            },
+            {
+            "searched_team": "Australia",
+            "opponent": "New Zealand",
+            "gender": "male",
+            "matches_played": "10",
+            "wins": "6",
+            "win_percentage": "60.00"
+            },
+            {
+            "searched_team": "Australia",
+            "opponent": "Sri Lanka",
+            "gender": "male",
+            "matches_played": "10",
+            "wins": "8",
+            "win_percentage": "80.00"
+            },
+            {
+            "searched_team": "Australia",
+            "opponent": "India",
+            "gender": "male",
+            "matches_played": "9",
+            "wins": "2",
+            "win_percentage": "22.22"
+            },
+            {
+            "searched_team": "Australia",
+            "opponent": "Bangladesh",
+            "gender": "male",
+            "matches_played": "7",
+            "wins": "3",
+            "win_percentage": "42.86"
+            }
+        ]
+    },
+    "462411b3": {
+        "player_info": [
+            {
+            "player_id": "462411b3",
+            "cricinfo_id": "625383",
+            "cricinfo_name": "Jasprit Bumrah",
+            "player_name": "JJ Bumrah",
+            "full_name": "Jasprit Jasbirsingh Bumrah",
+            "role": "Bowler",
+            "gender": "male",
+            "country": "India",
+            "img_url": "https://img1.hscicdn.com/image/upload/f_auto,t_h_100_2x/lsci/db/PICTURES/CMS/319900/319940.2.png"
+            }
+        ],
+        "batting": [],
+        "bowling": [
+            {
+            "player_id": "462411b3",
+            "player_name": "JJ Bumrah",
+            "gender": "male",
+            "balls_bowled": "1641",
+            "fours_conceded": "158",
+            "sixes_conceded": "52",
+            "boundary_concession_rate": "12.80",
+            "dot_ball_percentage": "44.91",
+            "total_balls": "1641",
+            "pp_balls": "644",
+            "pp_pct": "39.24",
+            "pp_econ": "6.30",
+            "pp_wkts": "28",
+            "mid_balls": "485",
+            "mid_pct": "29.56",
+            "mid_econ": "6.42",
+            "mid_wkts": "31",
+            "death_balls": "508",
+            "death_pct": "30.96",
+            "death_econ": "6.85",
+            "death_wkts": "47",
+            "matches_bowled": "71",
+            "total_wickets": "100",
+            "source": "Overall"
+            },
+            {
+            "player_id": "462411b3",
+            "player_name": "JJ Bumrah",
+            "gender": "male",
+            "balls_bowled": "386",
+            "fours_conceded": "30",
+            "sixes_conceded": "8",
+            "boundary_concession_rate": "9.84",
+            "dot_ball_percentage": "52.07",
+            "total_balls": "386",
+            "pp_balls": "180",
+            "pp_pct": "46.63",
+            "pp_econ": "5.13",
+            "pp_wkts": "10",
+            "mid_balls": "107",
+            "mid_pct": "27.72",
+            "mid_econ": "5.78",
+            "mid_wkts": "7",
+            "death_balls": "98",
+            "death_pct": "25.39",
+            "death_econ": "5.94",
+            "death_wkts": "9",
+            "matches_bowled": "18",
+            "total_wickets": "26",
+            "source": "International"
+            },
+            {
+            "player_id": "462411b3",
+            "player_name": "JJ Bumrah",
+            "gender": "male",
+            "balls_bowled": "1255",
+            "fours_conceded": "128",
+            "sixes_conceded": "44",
+            "boundary_concession_rate": "13.71",
+            "dot_ball_percentage": "42.71",
+            "total_balls": "1255",
+            "pp_balls": "464",
+            "pp_pct": "36.97",
+            "pp_econ": "6.75",
+            "pp_wkts": "18",
+            "mid_balls": "378",
+            "mid_pct": "30.12",
+            "mid_econ": "6.60",
+            "mid_wkts": "24",
+            "death_balls": "410",
+            "death_pct": "32.67",
+            "death_econ": "7.07",
+            "death_wkts": "38",
+            "matches_bowled": "53",
+            "total_wickets": "74",
+            "source": "Top Leagues"
+            }
+        ],
+        "team_stat": [
+            {
+            "searched_team": "India",
+            "opponent": "South Africa",
+            "gender": "male",
+            "matches_played": "15",
+            "wins": "9",
+            "win_percentage": "60.00"
+            },
+            {
+            "searched_team": "India",
+            "opponent": "England",
+            "gender": "male",
+            "matches_played": "15",
+            "wins": "10",
+            "win_percentage": "66.67"
+            },
+            {
+            "searched_team": "India",
+            "opponent": "Sri Lanka",
+            "gender": "male",
+            "matches_played": "13",
+            "wins": "9",
+            "win_percentage": "69.23"
+            },
+            {
+            "searched_team": "India",
+            "opponent": "West Indies",
+            "gender": "male",
+            "matches_played": "13",
+            "wins": "9",
+            "win_percentage": "69.23"
+            },
+            {
+            "searched_team": "India",
+            "opponent": "Australia",
+            "gender": "male",
+            "matches_played": "9",
+            "wins": "7",
+            "win_percentage": "77.78"
+            }
+        ]
+    },
+    "12b610c2": {
+        "player_info": [
+            {
+            "player_id": "12b610c2",
+            "cricinfo_id": "530011",
+            "cricinfo_name": "Travis Head",
+            "player_name": "TM Head",
+            "full_name": "Travis Michael Head",
+            "role": "Middle order Batter",
+            "gender": "male",
+            "country": "Australia",
+            "img_url": "https://img1.hscicdn.com/image/upload/f_auto,t_h_100_2x/lsci/db/PICTURES/CMS/321500/321584.2.png"
+            }
+        ],
+        "batting": [
+            {
+            "player_id": "12b610c2",
+            "player_name": "TM Head",
+            "gender": "male",
+            "powerplay_balls": "891",
+            "powerplay_runs": "1566",
+            "powerplay_strike_rate": "175.76",
+            "dot_ball_avoidance_pct": "62.95",
+            "innings_considered": "10",
+            "innings_25_plus": "3",
+            "consistency_25_plus_pct": "30.00",
+            "fours": "267",
+            "sixes": "113",
+            "total_batting_runs": "2274",
+            "boundary_runs": "1746",
+            "boundary_dependency_pct": "76.78",
+            "total_matches_played": "76",
+            "source": "Overall"
+            },
+            {
+            "player_id": "12b610c2",
+            "player_name": "TM Head",
+            "gender": "male",
+            "powerplay_balls": "328",
+            "powerplay_runs": "610",
+            "powerplay_strike_rate": "185.98",
+            "dot_ball_avoidance_pct": "60.74",
+            "innings_considered": "10",
+            "innings_25_plus": "8",
+            "consistency_25_plus_pct": "80.00",
+            "fours": "95",
+            "sixes": "43",
+            "total_batting_runs": "774",
+            "boundary_runs": "638",
+            "boundary_dependency_pct": "82.43",
+            "total_matches_played": "21",
+            "source": "International"
+            },
+            {
+            "player_id": "12b610c2",
+            "player_name": "TM Head",
+            "gender": "male",
+            "powerplay_balls": "563",
+            "powerplay_runs": "956",
+            "powerplay_strike_rate": "169.80",
+            "dot_ball_avoidance_pct": "63.96",
+            "innings_considered": "10",
+            "innings_25_plus": "3",
+            "consistency_25_plus_pct": "30.00",
+            "fours": "172",
+            "sixes": "70",
+            "total_batting_runs": "1500",
+            "boundary_runs": "1108",
+            "boundary_dependency_pct": "73.87",
+            "total_matches_played": "55",
+            "source": "Top Leagues"
+            }
+        ],
+        "bowling": [
+            {
+            "player_id": "12b610c2",
+            "player_name": "TM Head",
+            "gender": "male",
+            "balls_bowled": null,
+            "fours_conceded": null,
+            "sixes_conceded": null,
+            "boundary_concession_rate": null,
+            "dot_ball_percentage": null,
+            "total_balls": "76",
+            "pp_balls": "18",
+            "pp_pct": "23.68",
+            "pp_econ": "9.67",
+            "pp_wkts": "0",
+            "mid_balls": "52",
+            "mid_pct": "68.42",
+            "mid_econ": "9.00",
+            "mid_wkts": "1",
+            "death_balls": "6",
+            "death_pct": "7.89",
+            "death_econ": "8.00",
+            "death_wkts": "0",
+            "matches_bowled": "8",
+            "total_wickets": "1",
+            "source": "Overall"
+            },
+            {
+            "player_id": "12b610c2",
+            "player_name": "TM Head",
+            "gender": "male",
+            "balls_bowled": null,
+            "fours_conceded": null,
+            "sixes_conceded": null,
+            "boundary_concession_rate": null,
+            "dot_ball_percentage": null,
+            "total_balls": "64",
+            "pp_balls": "12",
+            "pp_pct": "18.75",
+            "pp_econ": "9.50",
+            "pp_wkts": "0",
+            "mid_balls": "46",
+            "mid_pct": "71.88",
+            "mid_econ": "9.26",
+            "mid_wkts": "1",
+            "death_balls": "6",
+            "death_pct": "9.38",
+            "death_econ": "8.00",
+            "death_wkts": "0",
+            "matches_bowled": "7",
+            "total_wickets": "1",
+            "source": "Top Leagues"
+            }
+        ],
+        "team_stat": [
+            {
+            "searched_team": "Australia",
+            "opponent": "West Indies",
+            "gender": "male",
+            "matches_played": "11",
+            "wins": "6",
+            "win_percentage": "54.55"
+            },
+            {
+            "searched_team": "Australia",
+            "opponent": "New Zealand",
+            "gender": "male",
+            "matches_played": "10",
+            "wins": "6",
+            "win_percentage": "60.00"
+            },
+            {
+            "searched_team": "Australia",
+            "opponent": "Sri Lanka",
+            "gender": "male",
+            "matches_played": "10",
+            "wins": "8",
+            "win_percentage": "80.00"
+            },
+            {
+            "searched_team": "Australia",
+            "opponent": "India",
+            "gender": "male",
+            "matches_played": "9",
+            "wins": "2",
+            "win_percentage": "22.22"
+            },
+            {
+            "searched_team": "Australia",
+            "opponent": "Bangladesh",
+            "gender": "male",
+            "matches_played": "7",
+            "wins": "3",
+            "win_percentage": "42.86"
+            }
+        ]
+    },
+    "99b75528": {
+        "player_info": [
+            {
+            "player_id": "99b75528",
+            "cricinfo_id": "308967",
+            "cricinfo_name": "Jos Buttler",
+            "player_name": "JC Buttler",
+            "full_name": "Joseph Charles Buttler",
+            "role": "Wicketkeeper Batter",
+            "gender": "male",
+            "country": "England",
+            "img_url": "https://img1.hscicdn.com/image/upload/f_auto,t_h_100_2x/lsci/db/PICTURES/CMS/383100/383143.1.png"
+            }
+        ],
+        "batting": [
+            {
+            "player_id": "99b75528",
+            "player_name": "JC Buttler",
+            "gender": "male",
+            "powerplay_balls": "2099",
+            "powerplay_runs": "2911",
+            "powerplay_strike_rate": "138.69",
+            "dot_ball_avoidance_pct": "66.61",
+            "innings_considered": "10",
+            "innings_25_plus": "5",
+            "consistency_25_plus_pct": "50.00",
+            "fours": "626",
+            "sixes": "291",
+            "total_batting_runs": "6697",
+            "boundary_runs": "4250",
+            "boundary_dependency_pct": "63.46",
+            "total_matches_played": "182",
+            "source": "Overall"
+            },
+            {
+            "player_id": "99b75528",
+            "player_name": "JC Buttler",
+            "gender": "male",
+            "powerplay_balls": "721",
+            "powerplay_runs": "1070",
+            "powerplay_strike_rate": "148.40",
+            "dot_ball_avoidance_pct": "67.41",
+            "innings_considered": "10",
+            "innings_25_plus": "5",
+            "consistency_25_plus_pct": "50.00",
+            "fours": "196",
+            "sixes": "96",
+            "total_batting_runs": "2131",
+            "boundary_runs": "1360",
+            "boundary_dependency_pct": "63.82",
+            "total_matches_played": "59",
+            "source": "International"
+            },
+            {
+            "player_id": "99b75528",
+            "player_name": "JC Buttler",
+            "gender": "male",
+            "powerplay_balls": "1378",
+            "powerplay_runs": "1841",
+            "powerplay_strike_rate": "133.60",
+            "dot_ball_avoidance_pct": "66.25",
+            "innings_considered": "10",
+            "innings_25_plus": "6",
+            "consistency_25_plus_pct": "60.00",
+            "fours": "430",
+            "sixes": "195",
+            "total_batting_runs": "4566",
+            "boundary_runs": "2890",
+            "boundary_dependency_pct": "63.29",
+            "total_matches_played": "123",
+            "source": "Top Leagues"
+            }
+        ],
+        "bowling": [],
+        "team_stat": [
+            {
+            "searched_team": "England",
+            "opponent": "West Indies",
+            "gender": "male",
+            "matches_played": "19",
+            "wins": "12",
+            "win_percentage": "63.16"
+            },
+            {
+            "searched_team": "England",
+            "opponent": "India",
+            "gender": "male",
+            "matches_played": "15",
+            "wins": "5",
+            "win_percentage": "33.33"
+            },
+            {
+            "searched_team": "England",
+            "opponent": "Pakistan",
+            "gender": "male",
+            "matches_played": "13",
+            "wins": "9",
+            "win_percentage": "69.23"
+            },
+            {
+            "searched_team": "England",
+            "opponent": "New Zealand",
+            "gender": "male",
+            "matches_played": "6",
+            "wins": "3",
+            "win_percentage": "50.00"
+            },
+            {
+            "searched_team": "England",
+            "opponent": "Australia",
+            "gender": "male",
+            "matches_played": "6",
+            "wins": "4",
+            "win_percentage": "66.67"
+            }
+        ]
+    },
+    "5d2eda89": {
+        "player_info": [
+            {
+            "player_id": "5d2eda89",
+            "cricinfo_id": "597806",
+            "cricinfo_name": "Smriti Mandhana",
+            "player_name": "S Mandhana",
+            "full_name": "Smriti Shriniwas Mandhana",
+            "role": "Opening Batter",
+            "gender": "female",
+            "country": "India",
+            "img_url": "https://img1.hscicdn.com/image/upload/f_auto,t_h_100_2x/lsci/db/PICTURES/CMS/320600/320632.1.png"
+            }
+        ],
+        "batting": [
+            {
+            "player_id": "5d2eda89",
+            "player_name": "S Mandhana",
+            "gender": "female",
+            "powerplay_balls": "1830",
+            "powerplay_runs": "2269",
+            "powerplay_strike_rate": "123.99",
+            "dot_ball_avoidance_pct": "59.40",
+            "innings_considered": "10",
+            "innings_25_plus": "4",
+            "consistency_25_plus_pct": "40.00",
+            "fours": "570",
+            "sixes": "89",
+            "total_batting_runs": "4159",
+            "boundary_runs": "2814",
+            "boundary_dependency_pct": "67.66",
+            "total_matches_played": "149",
+            "source": "Overall"
+            },
+            {
+            "player_id": "5d2eda89",
+            "player_name": "S Mandhana",
+            "gender": "female",
+            "powerplay_balls": "1000",
+            "powerplay_runs": "1211",
+            "powerplay_strike_rate": "121.10",
+            "dot_ball_avoidance_pct": "58.53",
+            "innings_considered": "10",
+            "innings_25_plus": "7",
+            "consistency_25_plus_pct": "70.00",
+            "fours": "320",
+            "sixes": "45",
+            "total_batting_runs": "2279",
+            "boundary_runs": "1550",
+            "boundary_dependency_pct": "68.01",
+            "total_matches_played": "74",
+            "source": "International"
+            },
+            {
+            "player_id": "5d2eda89",
+            "player_name": "S Mandhana",
+            "gender": "female",
+            "powerplay_balls": "806",
+            "powerplay_runs": "1031",
+            "powerplay_strike_rate": "127.92",
+            "dot_ball_avoidance_pct": "60.43",
+            "innings_considered": "10",
+            "innings_25_plus": "4",
+            "consistency_25_plus_pct": "40.00",
+            "fours": "246",
+            "sixes": "44",
+            "total_batting_runs": "1845",
+            "boundary_runs": "1248",
+            "boundary_dependency_pct": "67.64",
+            "total_matches_played": "73",
+            "source": "Top Leagues"
+            }
+        ],
+        "bowling": [],
+        "team_stat": [
+            {
+            "searched_team": "India",
+            "opponent": "England",
+            "gender": "female",
+            "matches_played": "16",
+            "wins": "7",
+            "win_percentage": "43.75"
+            },
+            {
+            "searched_team": "India",
+            "opponent": "Australia",
+            "gender": "female",
+            "matches_played": "14",
+            "wins": "2",
+            "win_percentage": "14.29"
+            },
+            {
+            "searched_team": "India",
+            "opponent": "Bangladesh",
+            "gender": "female",
+            "matches_played": "11",
+            "wins": "10",
+            "win_percentage": "90.91"
+            },
+            {
+            "searched_team": "India",
+            "opponent": "Sri Lanka",
+            "gender": "female",
+            "matches_played": "8",
+            "wins": "6",
+            "win_percentage": "75.00"
+            },
+            {
+            "searched_team": "India",
+            "opponent": "South Africa",
+            "gender": "female",
+            "matches_played": "7",
+            "wins": "3",
+            "win_percentage": "42.86"
+            }
+        ]
+    },
+    "740742ef": {
+        "player_info": [
+            {
+            "player_id": "740742ef",
+            "cricinfo_id": "34102",
+            "cricinfo_name": "Rohit Sharma",
+            "player_name": "RG Sharma",
+            "full_name": "Rohit Gurunath Sharma",
+            "role": "Top order Batter",
+            "gender": "male",
+            "country": "India",
+            "img_url": "https://img1.hscicdn.com/image/upload/f_auto,t_h_100_2x/lsci/db/PICTURES/CMS/385800/385819.2.png"
+            }
+        ],
+        "batting": [
+            {
+            "player_id": "740742ef",
+            "player_name": "RG Sharma",
+            "gender": "male",
+            "powerplay_balls": "1489",
+            "powerplay_runs": "2074",
+            "powerplay_strike_rate": "139.29",
+            "dot_ball_avoidance_pct": "59.33",
+            "innings_considered": "10",
+            "innings_25_plus": "5",
+            "consistency_25_plus_pct": "50.00",
+            "fours": "300",
+            "sixes": "156",
+            "total_batting_runs": "3071",
+            "boundary_runs": "2136",
+            "boundary_dependency_pct": "69.55",
+            "total_matches_played": "118",
+            "source": "Overall"
+            },
+            {
+            "player_id": "740742ef",
+            "player_name": "RG Sharma",
+            "gender": "male",
+            "powerplay_balls": "583",
+            "powerplay_runs": "832",
+            "powerplay_strike_rate": "142.71",
+            "dot_ball_avoidance_pct": "60.71",
+            "innings_considered": "10",
+            "innings_25_plus": "4",
+            "consistency_25_plus_pct": "40.00",
+            "fours": "118",
+            "sixes": "67",
+            "total_batting_runs": "1255",
+            "boundary_runs": "874",
+            "boundary_dependency_pct": "69.64",
+            "total_matches_played": "46",
+            "source": "International"
+            },
+            {
+            "player_id": "740742ef",
+            "player_name": "RG Sharma",
+            "gender": "male",
+            "powerplay_balls": "906",
+            "powerplay_runs": "1242",
+            "powerplay_strike_rate": "137.09",
+            "dot_ball_avoidance_pct": "58.42",
+            "innings_considered": "10",
+            "innings_25_plus": "5",
+            "consistency_25_plus_pct": "50.00",
+            "fours": "182",
+            "sixes": "89",
+            "total_batting_runs": "1816",
+            "boundary_runs": "1262",
+            "boundary_dependency_pct": "69.49",
+            "total_matches_played": "72",
+            "source": "Top Leagues"
+            }
+        ],
+        "bowling": [],
+        "team_stat": [
+            {
+            "searched_team": "India",
+            "opponent": "South Africa",
+            "gender": "male",
+            "matches_played": "15",
+            "wins": "9",
+            "win_percentage": "60.00"
+            },
+            {
+            "searched_team": "India",
+            "opponent": "England",
+            "gender": "male",
+            "matches_played": "15",
+            "wins": "10",
+            "win_percentage": "66.67"
+            },
+            {
+            "searched_team": "India",
+            "opponent": "Sri Lanka",
+            "gender": "male",
+            "matches_played": "13",
+            "wins": "9",
+            "win_percentage": "69.23"
+            },
+            {
+            "searched_team": "India",
+            "opponent": "West Indies",
+            "gender": "male",
+            "matches_played": "13",
+            "wins": "9",
+            "win_percentage": "69.23"
+            },
+            {
+            "searched_team": "India",
+            "opponent": "Australia",
+            "gender": "male",
+            "matches_played": "9",
+            "wins": "7",
+            "win_percentage": "77.78"
+            }
+        ]
+    },
+    "be150fc8": {
+        "player_info": [
+            {
+            "player_id": "be150fc8",
+            "cricinfo_id": "275487",
+            "cricinfo_name": "Ellyse Perry",
+            "player_name": "EA Perry",
+            "full_name": "Ellyse Alexandra Perry",
+            "role": "Allrounder",
+            "gender": "female",
+            "country": "Australia",
+            "img_url": "https://img1.hscicdn.com/image/upload/f_auto,t_h_100_2x/lsci/db/PICTURES/CMS/320100/320130.1.png"
+            }
+        ],
+        "batting": [
+            {
+            "player_id": "be150fc8",
+            "player_name": "EA Perry",
+            "gender": "female",
+            "powerplay_balls": "1057",
+            "powerplay_runs": "1192",
+            "powerplay_strike_rate": "112.77",
+            "dot_ball_avoidance_pct": "63.90",
+            "innings_considered": "10",
+            "innings_25_plus": "7",
+            "consistency_25_plus_pct": "70.00",
+            "fours": "486",
+            "sixes": "87",
+            "total_batting_runs": "4118",
+            "boundary_runs": "2466",
+            "boundary_dependency_pct": "59.88",
+            "total_matches_played": "134",
+            "source": "Overall"
+            },
+            {
+            "player_id": "be150fc8",
+            "player_name": "EA Perry",
+            "gender": "female",
+            "powerplay_balls": "124",
+            "powerplay_runs": "140",
+            "powerplay_strike_rate": "112.90",
+            "dot_ball_avoidance_pct": "69.65",
+            "innings_considered": "10",
+            "innings_25_plus": "5",
+            "consistency_25_plus_pct": "50.00",
+            "fours": "97",
+            "sixes": "24",
+            "total_batting_runs": "955",
+            "boundary_runs": "532",
+            "boundary_dependency_pct": "55.71",
+            "total_matches_played": "39",
+            "source": "International"
+            },
+            {
+            "player_id": "be150fc8",
+            "player_name": "EA Perry",
+            "gender": "female",
+            "powerplay_balls": "834",
+            "powerplay_runs": "928",
+            "powerplay_strike_rate": "111.27",
+            "dot_ball_avoidance_pct": "62.55",
+            "innings_considered": "10",
+            "innings_25_plus": "8",
+            "consistency_25_plus_pct": "80.00",
+            "fours": "364",
+            "sixes": "62",
+            "total_batting_runs": "3007",
+            "boundary_runs": "1828",
+            "boundary_dependency_pct": "60.79",
+            "total_matches_played": "88",
+            "source": "Top Leagues"
+            }
+        ],
+        "bowling": [
+            {
+            "player_id": "be150fc8",
+            "player_name": "EA Perry",
+            "gender": "female",
+            "balls_bowled": "1267",
+            "fours_conceded": "199",
+            "sixes_conceded": "30",
+            "boundary_concession_rate": "18.07",
+            "dot_ball_percentage": "44.36",
+            "total_balls": "1267",
+            "pp_balls": "553",
+            "pp_pct": "43.65",
+            "pp_econ": "6.69",
+            "pp_wkts": "27",
+            "mid_balls": "560",
+            "mid_pct": "44.20",
+            "mid_econ": "7.11",
+            "mid_wkts": "28",
+            "death_balls": "146",
+            "death_pct": "11.52",
+            "death_econ": "10.03",
+            "death_wkts": "14",
+            "matches_bowled": "93",
+            "total_wickets": "66",
+            "source": "Overall"
+            },
+            {
+            "player_id": "be150fc8",
+            "player_name": "EA Perry",
+            "gender": "female",
+            "balls_bowled": null,
+            "fours_conceded": null,
+            "sixes_conceded": null,
+            "boundary_concession_rate": null,
+            "dot_ball_percentage": null,
+            "total_balls": "188",
+            "pp_balls": "110",
+            "pp_pct": "58.51",
+            "pp_econ": "4.75",
+            "pp_wkts": "7",
+            "mid_balls": "72",
+            "mid_pct": "38.30",
+            "mid_econ": "6.00",
+            "mid_wkts": "4",
+            "death_balls": "6",
+            "death_pct": "3.19",
+            "death_econ": "6.00",
+            "death_wkts": "1",
+            "matches_bowled": "21",
+            "total_wickets": "12",
+            "source": "International"
+            },
+            {
+            "player_id": "be150fc8",
+            "player_name": "EA Perry",
+            "gender": "female",
+            "balls_bowled": "1031",
+            "fours_conceded": "170",
+            "sixes_conceded": "26",
+            "boundary_concession_rate": "19.01",
+            "dot_ball_percentage": "42.29",
+            "total_balls": "1031",
+            "pp_balls": "419",
+            "pp_pct": "40.64",
+            "pp_econ": "7.17",
+            "pp_wkts": "20",
+            "mid_balls": "470",
+            "mid_pct": "45.59",
+            "mid_econ": "7.34",
+            "mid_wkts": "22",
+            "death_balls": "134",
+            "death_pct": "13.00",
+            "death_econ": "10.12",
+            "death_wkts": "13",
+            "matches_bowled": "70",
+            "total_wickets": "52",
+            "source": "Top Leagues"
+            }
+        ],
+        "team_stat": [
+            {
+            "searched_team": "Australia",
+            "opponent": "India",
+            "gender": "female",
+            "matches_played": "14",
+            "wins": "12",
+            "win_percentage": "85.71"
+            },
+            {
+            "searched_team": "Australia",
+            "opponent": "New Zealand",
+            "gender": "female",
+            "matches_played": "11",
+            "wins": "10",
+            "win_percentage": "90.91"
+            },
+            {
+            "searched_team": "Australia",
+            "opponent": "England",
+            "gender": "female",
+            "matches_played": "7",
+            "wins": "5",
+            "win_percentage": "71.43"
+            },
+            {
+            "searched_team": "Australia",
+            "opponent": "South Africa",
+            "gender": "female",
+            "matches_played": "6",
+            "wins": "4",
+            "win_percentage": "66.67"
+            },
+            {
+            "searched_team": "Australia",
+            "opponent": "Bangladesh",
+            "gender": "female",
+            "matches_played": "4",
+            "wins": "4",
+            "win_percentage": "100.00"
+            }
+        ]
+    }
+}

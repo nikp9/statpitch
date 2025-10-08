@@ -105,6 +105,10 @@ export default function PlayerDashboard({ player, batting, bowling, teamStat }: 
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-6 space-y-6">
+      <div className="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-800 p-4 rounded-md mb-6">
+        ⚠️ The backend server is currently offline.  
+        The data you&apos;re seeing is <strong>stale</strong> and shown <strong>only for reference</strong>.
+      </div>
       {/* Player Header */}
       <Card className="w-full">
         <CardHeader className="p-4 sm:p-6">
